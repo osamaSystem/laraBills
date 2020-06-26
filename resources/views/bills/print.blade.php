@@ -43,6 +43,7 @@
         التفاصيل المالية:
     </div>
 
+        <input type="hidden" value="{{$unitPrice = $allBill-> total_price/$allBill-> amount}}">
 
 
     <div class="all-products-margin-sides">
@@ -50,15 +51,16 @@
             <thead dir="rtl" align="center" bgcolor="#bab4b4">
             <tr >
                 <th  scope="col">الصـنف</th>
+                <th  scope="col">سعر الوحدة</th>
                 <th  scope="col">الكمية</th>
-                <th  scope="col">المبلغ</th>
+                <th  scope="col">المبلغ الكلي</th>
             </tr>
             </thead>
             <tbody dir="rtl" id="billsTbodyId" name="billsTbodyId" align="center">
 
-
                 <tr>
                     <td>{{$allBill-> product}}</td>
+                    <td>{{$unitPrice}}</td>
                     <td>{{$allBill-> amount}}</td>
                     <td>{{$allBill-> total_price}}</td>
 
