@@ -37,5 +37,9 @@ Route::group(['prefix'=>'bills'],function () {
     Route::get('edit/{id}', 'AllbillController@edit');
     Route::post('update/{id}', 'AllbillController@update');
     Route::get('delete/{id}', 'AllbillController@delete');
+    Route::post('search', 'AllbillController@search');
+    Route::get('print/{id}', 'AllbillController@print');
 
 });
+
+Route::get('print', 'InvoiceController@index');

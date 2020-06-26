@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AllBillRequest;
 use App\Models\AllBill;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 
 class AllBillController extends Controller
@@ -74,5 +75,31 @@ class AllBillController extends Controller
           return redirect('bills/getAll')->with(['successful' => 'تم التحديث بنجاح']);
        }
    }
+
+   public function search(Request $request){
+
+//'product','amount','total_price','date','migrator',
+       $allBill = AllBill::where('product','like','%'.$request -> get('searchRequest').'%')
+           ->orWhere('amount','like','%'.$request -> get('searchRequest').'%')
+           ->orWhere('id','like','%'.$request -> get('searchRequest').'%')
+           ->orWhere('total_price','like','%'.$request -> get('searchRequest').'%')
+           ->orWhere('date','like','%'.$request -> get('searchRequest').'%')
+           ->orWhere('migrator','like','%'.$request -> get('searchRequest').'%')
+           ->orderBy('id','desc')
+           ->get();
+       return json_encode($allBill);
+//       return 'ok';
+   }
+
+    public function print($id){
+        $allBill = AllBill::find($id);
+        if (!$allBill){
+            return redirect()->back();
+        }
+        $details = '' ;//here i should write details
+        $allBill = AllBill::select('id','product','amount','total_price','date','migrator','customer')->find($id);
+        return view('bills.print',compact('allBill'));//->with('details',$details);
+    }
+
 
 }

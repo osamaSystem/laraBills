@@ -133,8 +133,8 @@
             margin-right: 70px;
         }
         .all-products-margin-sides {
-            margin-left: 230px;
-            margin-right: 230px;
+            margin-left: 300px;
+            margin-right: 250px;
         }
         .photo-margin-top {
             margin-top: 310px;
@@ -295,45 +295,8 @@
 <body class="nice-font">
 
 	<!-- Start Preloader Area -->
-	<div class="preloader-area">
-		<div class="loader-box">
-			<div class="loader"></div>
-		</div>
-	</div>
 	<!-- End Preloader Area -->
 
-
-	<!-- Start Header Area -->
-	<header id="header" class="navbar navbar-custom">
-		<div class="container blue-color padding-top">
-			<div class="row align-items-center d-flex links">
-				<div id="logo">
-					<a href=""><img src="{{URL::asset('img/logo.png')}}" alt="" title="" /></a>
-				</div>
-                <b>
-				<nav id="nav-menu-containe title" >
-					<ul class="nav-menu">
-						<li class="menu-has-children nice-font"><a class="nice-font" href="">الأصنــاف</a>
-							<ul>
-								<li><a class="nice-font" href="{{url('products/create')}}">اضـافة صنـف</a></li>
-								<li><a class="nice-font" href="{{url('products/getAll')}}">عـرض الأصنـاف</a></li>
-							</ul>
-						</li>
-						<li class="menu-has-children "><a class="nice-font" href="">الفـواتيـر</a>
-							<ul>
-								<li><a href="{{url('bills/create')}}">اضـافة فاتورة</a></li>
-								<li><a href="{{url('bills/getAll')}}">عـرض الفواتير</a></li>
-								<li><a href="">تقرير عن الفواتير</a></li>
-							</ul>
-						</li>
-                        <li class=""><a class="nice-font title" href="{{url('home')}}">الصـفحـة الـرئيسـية</a></li>
-                    </ul>
-				</nav>
-                </b>
-			</div>
-		</div>
-	</header>
-	<!-- End Header Area -->
 
 
 {{--here my page content--}}
@@ -341,44 +304,6 @@
 
     @yield('content')
 
-
-        <!-- start footer Area -->
-	<footer class="footer-area navbar-custom">
-		<div class="container">
-			<div class="row justify-content-center ">
-				<div class="col-lg-12 blue-color">
-					<div class="footer-top flex-column blue-color">
-						<div class="footer-logo">
-
-							<h4>Follow Us</h4>
-						</div>
-						<div class="footer-social">
-							<a href=""><i class="fa fa-facebook"></i></a>
-							<a href=""><i class="fa fa-twitter"></i></a>
-							<a href=""><i class="fa fa-dribbble"></i></a>
-							<a href=""><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row footer-bottom justify-content-center color-white">
-				<p class="col-lg-8 col-sm-12 footer-text">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
- &copy; <script>document.write(new Date().getFullYear());</script> كل الحقوق محفوظة لمؤسسة أولاد بلل <i class="fa fa-heart-o" aria-hidden="true"></i>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		</div>
-	</footer>
-	<!-- End footer Area -->
-
-
-	<!-- ####################### Start Scroll to Top Area ####################### -->
-	<div id="back-top">
-		<a title="Go to Top" href="">
-			<i class="lnr lnr-arrow-up"></i>
-		</a>
-	</div>
-	<!-- ####################### End Scroll to Top Area ####################### -->
 
 	<script src="{{URL::asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
